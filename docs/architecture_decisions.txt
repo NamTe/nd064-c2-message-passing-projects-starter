@@ -1,0 +1,11 @@
+- I decided to split the system into 4 main service based on their responsibility
+    - Location Service: Retrieve/Register new Location
+    - Person Service: Retrieve/Register new Person
+    - Connection Service: Retrieve connection between users (Combine data from Location Service and Person Service)
+    - Location gRPC: Handle the large volume of location data that will be ingested
+Message passing strategies
+- For Person Service and Connection Service we can keep REST as communication strategies
+- I assume that location data will be sent from user's device to our system in realtime with large volume
+    - So, gRPC will be used to speed up/reduce the latency when sending data between user's device to system
+    - Due to large volume of data, there maybe bottleneck, the service may freeze => data will be lost.
+        - So message queue (Kafka) will be used to handle the problem. Location Service will recieve data from Kafka and persits them to db.
