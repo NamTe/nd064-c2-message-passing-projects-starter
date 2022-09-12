@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "429f36d8-96e2-473e-bf40-d6e3f9c93156",
+		"name": "UdaConnect Connection API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get connection data resource",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/persons/:person_id/connection?start_date=2020-01-01&end_date=2022-12-30&distance=5",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"persons",
+						":person_id",
+						"connection"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2020-01-01",
+							"description": "Lower bound of date range"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-12-30",
+							"description": "Upper bound of date range"
+						},
+						{
+							"key": "distance",
+							"value": "5",
+							"description": "Proximity to a given user in meters"
+						}
+					],
+					"variable": [
+						{
+							"key": "person_id",
+							"value": "5",
+							"description": "(Required) "
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/persons/:person_id/connection?distance=adipisicing sint quis Duis&end_date=adipisicing sint quis Duis&start_date=adipisicing sint quis Duis",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"persons",
+								":person_id",
+								"connection"
+							],
+							"query": [
+								{
+									"key": "distance",
+									"value": "adipisicing sint quis Duis"
+								},
+								{
+									"key": "end_date",
+									"value": "adipisicing sint quis Duis"
+								},
+								{
+									"key": "start_date",
+									"value": "adipisicing sint quis Duis"
+								}
+							],
+							"variable": [
+								{
+									"key": "person_id",
+									"value": "adipisicing sint quis Duis",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:30005/",
+			"type": "string"
+		}
+	]
+}

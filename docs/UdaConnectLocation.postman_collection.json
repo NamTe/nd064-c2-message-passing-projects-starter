@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "4f098242-1149-4fa3-b699-0f91df021d35",
+		"name": "UdaConnectLocation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/locations",
+			"item": [
+				{
+					"name": "post location resource",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"creation_time\": \"2020-08-15T10: 37: 06\",\r\n        \"latitude\": \"-122.2908829999999938\",\r\n        \"id\": 30,\r\n        \"longitude\": \"37.5536299999999983\",\r\n        \"person_id\": 5\r\n    },\r\n    {\r\n        \"creation_time\": \"2020-08-15T10: 37: 06\",\r\n        \"latitude\": \"-122.2905240000000049\",\r\n        \"id\": 31,\r\n        \"longitude\": \"37.5534409999999994\",\r\n        \"person_id\": 5\r\n    },\r\n    {\r\n        \"creation_time\": \"2020-07-07T10: 37: 06\",\r\n        \"latitude\": \"-122.2908829999999938\",\r\n        \"id\": 57,\r\n        \"longitude\": \"37.5536299999999983\",\r\n        \"person_id\": 5\r\n    },\r\n    {\r\n        \"creation_time\": \"2020-01-05T10: 37: 06\",\r\n        \"latitude\": \"35.0585135999999977\",\r\n        \"id\": 63,\r\n        \"longitude\": \"-106.5719521000000043\",\r\n        \"person_id\": 5\r\n    },\r\n    {\r\n        \"creation_time\": \"2020-07-07T10: 37: 06\",\r\n        \"latitude\": \"-122.2908829999999938\",\r\n        \"id\": 66,\r\n        \"longitude\": \"37.5536299999999983\",\r\n        \"person_id\": 5\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/locations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"locations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/locations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "get locations person resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/locations/persons/:person_id?end_date=2022-12-30&start_date=2020-01-01",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"locations",
+								"persons",
+								":person_id"
+							],
+							"query": [
+								{
+									"key": "person_id",
+									"value": "2",
+									"description": "(Required) Unique ID for a given Location's person",
+									"disabled": true
+								},
+								{
+									"key": "location_id",
+									"value": "36",
+									"description": "Unique ID for a given Location",
+									"disabled": true
+								},
+								{
+									"key": "end_date",
+									"value": "2022-12-30",
+									"description": "Upper bound of date range"
+								},
+								{
+									"key": "start_date",
+									"value": "2020-01-01",
+									"description": "Lower bound of date range"
+								}
+							],
+							"variable": [
+								{
+									"key": "person_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/locations/persons/:person_id?person_id=cillum dolor anim commodo deserunt&location_id=cillum dolor anim commodo deserunt&end_date=cillum dolor anim commodo deserunt&start_date=cillum dolor anim commodo deserunt",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations",
+										"persons",
+										":person_id"
+									],
+									"query": [
+										{
+											"key": "person_id",
+											"value": "cillum dolor anim commodo deserunt"
+										},
+										{
+											"key": "location_id",
+											"value": "cillum dolor anim commodo deserunt"
+										},
+										{
+											"key": "end_date",
+											"value": "cillum dolor anim commodo deserunt"
+										},
+										{
+											"key": "start_date",
+											"value": "cillum dolor anim commodo deserunt"
+										}
+									],
+									"variable": [
+										{
+											"key": "person_id",
+											"value": "cillum dolor anim commodo deserunt",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "get location resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/locations/:location_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"locations",
+								":location_id"
+							],
+							"variable": [
+								{
+									"key": "location_id",
+									"value": "68",
+									"description": "(Required) Unique ID for a given Location"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/locations/:location_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations",
+										":location_id"
+									],
+									"variable": [
+										{
+											"key": "location_id",
+											"value": "cillum dolor anim commodo deserunt",
+											"description": "(Required) Unique ID for a given Location"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:30003/",
+			"type": "string"
+		}
+	]
+}

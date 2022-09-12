@@ -1,0 +1,8 @@
+# Sample payload for Location Service Endpoint localhost:30004
+
+{
+  "person_id": "8",
+  "latitude": "-122.290883",
+  "longitude": "37.55363",
+  "creation_time": "2022-12-22T04:12:58"
+}
