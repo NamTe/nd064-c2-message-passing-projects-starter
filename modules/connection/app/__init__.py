@@ -3,17 +3,17 @@ from flask_cors import CORS
 from flask_restx import Api
 from flask_sqlalchemy import SQLAlchemy
 
-from app.bus import bus, listen_kill_server
-
 db = SQLAlchemy()
-app = Flask(__name__)
+
 
 def create_app(env=None):
     from app.config import config_by_name
     from app.routes import register_routes
 
+    app = Flask(__name__)
     app.config.from_object(config_by_name[env or "test"])
-    api = Api(app, title="UdaConnect API", version="0.1.0")
+    api = Api(app, title="UdaConnect Connection API", version="0.1.0")
+
     CORS(app)  # Set CORS for development
 
     register_routes(api, app)
@@ -22,8 +22,5 @@ def create_app(env=None):
     @app.route("/health")
     def health():
         return jsonify("healthy")
-
-    bus.run()
-    listen_kill_server()
 
     return app
